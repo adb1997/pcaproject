@@ -17,8 +17,34 @@ layout: default
       The algorithm envisages the internet as a directed graph with unweighted edges. 
       Each node of the graph represents a webpage and links between two webpages are denoted by a link. Each node receives a score based on its ‘importance’. Pages with high-quality content should receive higher scores than pages with low-quality content. With the ever growing size of the internet, the number of pages is growing at an exponential rate. 
         Such an application will greatly benefit from parallel processing</p>
-    <h2> Heading of the paragraph </h2>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    <h2>Challenge</h2>
+    <p>Google themselves have moved way beyond PageRank and use very powerful hardware. However, this project will be a good opportunity to utilize various data parallel techniques learned in this class.</p>
+    <p>When we do partitioning for data parallelism, we need to distribute data evenly to the tasks in order to maximize the performance of the parallel execution. A significant challenge would be  in figuring out how to partition the data well, as there are several techniques to partition a graph in the page rank algorithm. There are usually many more edges compared to vertices. 
+</p>
+    <p>Depending on the workload, the majority of the time is spent in accessing the neighbours of the vertices of the graph which can be anywhere in memory. This leads to poor spatial locality of data accesses. So we will have to figure out a way to efficiently access memory such that we have better cache locality.
+</p>
+    <h2>Resources</h2>
+    <p>GHC machines to develop and implement the code
+PSC machines for testing message passing version
+</p>
+    <h2>Goals and Deliverables
+    </h2>
+    <h3>Plan to achieve
+    </h3>
+    
+    <p>The initial plan is to develop the algorithm and test it for sequential correctness using the GHC cluster. Once that is achieved, we aim to parallelize PageRank using MPI, and eventually scale the speedup using the PSC machines. 
+</p>
+    <h3>Hope to achieve</h3>
+    <p>
+      We do hope to achieve a significant improvement in terms of computation time which improves as we add more cores. It would be hard to reasonably quantify the speedup so soon in the project but we do hope to update that eventually as we progress. Current simple implementations in research show at least 10x-20x speedup which we would hope to hit. 
+
+At the poster presentation, if all goes well, we would like to have a demo that would showcase our comparative analysis through speedup graphs. 
+
+    </p>
+    Through this project we intend to achieve a deeper understanding of graph algorithms through one of their most popular implementations in industry as well as academia in that of PageRank. This would allow us to apply several skills that we have learned in theory as well as through assignments. Additionally, the project would also give us a greater grasp on memory hierarchies in computer architecture, along with their application in parallel systems. 
+    <p>
+      
+        </p>
   </body>
   
   <table>

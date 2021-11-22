@@ -16,6 +16,16 @@ layout: default
     <p>
       There are several publicly available datasets and we chose to go with the Google, Stanford and Berkeley web graphs available at http://snap.stanford.edu/data/#web. As they are publicly available, we will be able to cross verify the correctness of our implementation. 
     </p>
+    <p>The basic structure of the code is as follows:</p>
+    <ul>The first step is to build the graph data structure - this involves reading the graph from the input dataset file. </ul>
+    <ul>Next we call the page rank function which serially calculates the page rank for each of the nodes in the graph and updates the value in the graph structure.
+</ul>
+    <ul>We have timing functions around this function to get some baseline results and have verified correctness on small handmade graphs. </ul>
+    <h2>Challenges</h2>
+    <p>We need to figure out a way to accurately measure the correctness of our algorithm for larger datasets. On further research we found some versions online which simply printed out a pagerank for the websites and we plan to compare our results with their solutions. The serial version is basic where we are still using a sparse representation of the graph which is very inefficient for space. We need to refactor our code to handle compressed sparse row matrix representation.</p>
+    <p>
+      Initially we had planned to have our parallel version working by now but we are behind schedule by a few days and need to figure out how to have different nodes work on separate pieces of information and converge at regular intervals. If we follow the naive approach, it simply divides up the work and conveys the result via message passing like the last assignment. However we are trying to have a better parallel version to begin with and then upgrade our code to handle smarter partitioning, as well as dynamic scheduling using a work queue. 
+    </p>  
   </body>
 </html>
 

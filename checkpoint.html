@@ -25,7 +25,39 @@ layout: default
     <p>We need to figure out a way to accurately measure the correctness of our algorithm for larger datasets. On further research we found some versions online which simply printed out a pagerank for the websites and we plan to compare our results with their solutions. The serial version is basic where we are still using a sparse representation of the graph which is very inefficient for space. We need to refactor our code to handle compressed sparse row matrix representation.</p>
     <p>
       Initially we had planned to have our parallel version working by now but we are behind schedule by a few days and need to figure out how to have different nodes work on separate pieces of information and converge at regular intervals. If we follow the naive approach, it simply divides up the work and conveys the result via message passing like the last assignment. However we are trying to have a better parallel version to begin with and then upgrade our code to handle smarter partitioning, as well as dynamic scheduling using a work queue. 
-    </p>  
+    </p> 
+    <h2>Goals and Deliverables</h2>
+    <p>Our proposal stated that we wanted to compare the parallel performance of the algorithm using MPI, OpenMP which we are on track for. In addition, time permitting, we are also interested in exploring a solution using domain specific language like GraphLab.</p>
+    <p>
+During the poster presentation, we aim to be able to demonstrate the various versions by running them in person and displaying the speedup results on our poster. We only have the numbers for our baseline version. We ran the code for various datasets and also got some numbers for a couple of versions found online.
+    </p>
+    <h2>New schedule</h2>
+    <table>
+  <tr>
+    <td>Week 1 (11/22 - 11/24)</th>
+    <td>Get baseline parallel version working</th> 
+  </tr>
+  <tr>
+    <td>Week 2 (11/25 - 11/28)</td>
+    <td>Thanksgiving break, Start Implementation of OpenMP and Message Passing version
+</td> 
+  </tr>
+  <tr>
+    <td>Week 3 (11/29 - 12/1)</td>
+    <td>All code should be complete by now, profile code and collect preliminary results
+</td> 
+  </tr>
+
+  <tr>
+    <td>Week 4 (12/2 - 12/5)</td>
+    <td>Fix any inefficiencies caught by profiling the code, try implementing working version in DSL like Graphlab </td> 
+  </tr>
+
+  <tr>
+    <td>Week 5 (12/6 - 12/8)</td>
+    <td>Collect results, prepare report and poster </td> 
+  </tr>
+  </table>
   </body>
 </html>
 
